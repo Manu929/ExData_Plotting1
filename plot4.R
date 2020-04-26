@@ -1,3 +1,4 @@
+png(filename = "plot4.png", height = 480, width = 480)  #first create a png file (instead of using dev.copy)
 data <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings ="?",
                    colClasses = c("character","character", "numeric","numeric","numeric","numeric","numeric","numeric","numeric"),
                    stringsAsFactors = FALSE)  #read all data
@@ -27,5 +28,4 @@ with(dat,{
         plot(Global_reactive_power ~ Datetime, type = "l", xlab = "datetime")
 })
 
-dev.copy(png, file = "plot4.png", height = 480, width = 480)  #save copy of this plot as png-file4
 dev.off()
